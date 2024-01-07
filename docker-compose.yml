@@ -4,7 +4,7 @@ services:
     container_name: api
     build: ./api
     ports:
-      - "8000:8000"
+      - "8080:8080"
     volumes:
       - ./api:/workspace:cached # chachedは同期の厳密性よりも速度を優先する
   web:
