@@ -5,6 +5,7 @@ services:
     build: ./api
     ports:
       - "8080:8080"
+    tty: true # -tと同義。コンテナの標準入力を開く
     volumes:
       - ./api:/workspace:cached # chachedは同期の厳密性よりも速度を優先する
   web:
@@ -12,6 +13,7 @@ services:
     build: ./web
     ports:
       - "3000:3000"
+    tty: true
     volumes:
       - ./web:/workspace:cached
     depends_on:
