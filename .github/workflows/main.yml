@@ -1,0 +1,13 @@
+name: Deploy Simple CI/CD
+
+on:
+  push: # Trigger the workflow on push events
+    branches: ["main"]
+env:
+  AWS_REGION: us-east-1
+  ECS_SERVICE: simple-cicd-service
+  ECS_CLUSTER: cicd-cluster-udemy
+  ECS_TASK_DEFINITION: .aws/task-definition.json
+
+permissions:
+  contents: read
